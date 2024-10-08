@@ -10,8 +10,9 @@ from dash import Dash, dcc, html, Input, Output  # pip install dash (version 2.0
 app = Dash(__name__)
 
 # -- Import and clean data (importing csv into pandas)
-df = pd.read_csv("/Users/yalingliu/Documents/Yaling/life/learning/Plotly/Dash-by-Plotly/Other/Dash_Introduction/intro_bees.csv")
-# df = pd.read_csv("https://raw.githubusercontent.com/Coding-with-Adam/Dash-by-Plotly/master/Other/Dash_Introduction/intro_bees.csv")
+df=pd.read_csv('intro_bees.csv')
+
+
 
 df = df.groupby(['State', 'ANSI', 'Affected by', 'Year', 'state_code'])[['Pct of Colonies Impacted']].mean()
 df.reset_index(inplace=True)
